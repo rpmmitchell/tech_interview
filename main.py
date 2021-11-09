@@ -62,6 +62,23 @@ def jumpingOnClouds(c):
 
     print(step)
 
+def repeatedString(s, n):
+    repeatTimes = math.floor(n/len(s))
+    repeatRemain = n - repeatTimes * len(s)
+    repeatValue = 0
+    repeatTotal = 0
+    for value in s:
+        if value == 'a':
+            repeatValue += 1
+    for i in range(0, int(repeatRemain)):
+        if s[i] == 'a':
+            repeatTotal += 1
+        else:
+            continue
+    repeatTotal += repeatTimes * repeatValue
+    print(repeatTotal)
+
+
 
 
 
@@ -75,6 +92,6 @@ def jumpingOnClouds(c):
 #countingValleys(8,'UDDDUDUU')
 
 #clouds
-jumpingOnClouds([0,0,0,1,0,0])
-
+#jumpingOnClouds([0,0,0,1,0,0])
+repeatedString('aba',100)
 
