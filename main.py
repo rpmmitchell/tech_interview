@@ -1,3 +1,5 @@
+import math
+
 def checkUni(checkMe):
     uniDict = {}
     for count, value in enumerate(checkMe):
@@ -7,24 +9,6 @@ def checkUni(checkMe):
         print('I do not have all unique values')
     else:
         print('I have all unique values')
-
-
-#!/bin/python
-
-import math
-import os
-import random
-import re
-import sys
-
-#
-# Complete the 'sockMerchant' function below.
-#
-# The function is expected to return an INTEGER.
-# The function accepts following parameters:
-#  1. INTEGER n
-#  2. INTEGER_ARRAY ar
-#
 
 def sockMerchant(n, ar):
     # figure out the pairs in the array, given the length
@@ -40,8 +24,34 @@ def sockMerchant(n, ar):
         counter += math.floor(ar.count(match)/2)
     print(counter)
 
+def countingValleys(steps, path):
+    altitude = 0
+    valleyCount = 0
+    for step in path:
+        if altitude == 0:
+            primer = True
+        else:
+            primer = False
+        if step == 'D' and primer == True:
+            altitude -= 1
+            valleyCount += 1
+        elif step == 'D' and primer == False:
+            altitude -= 1
+        else:
+            altitude += 1
+    print(valleyCount)
+
+
+
+
 
 #sockMerchant method
-sockMerchant(9, [10,20,20,10,10,30,50,10,20,10])
+#sockMerchant(9, [10,20,20,10,10,30,50,10,20,10])
 
-checkUni('hello')
+#uniCheck
+#checkUni('hello')
+
+#valley count code
+#countingValleys(8,'UDDDUDUU')
+
+
