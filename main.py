@@ -41,6 +41,26 @@ def countingValleys(steps, path):
             altitude += 1
     print(valleyCount)
 
+def jumpingOnClouds(c):
+    step = 0
+    location = 0
+    endOfArray = False
+    while endOfArray == False:
+        if (location + 2) < len(c):
+            if(c[location + 2] != 1):
+                step += 1
+                location += 2
+            else:
+                step += 1
+                location += 1
+        else:
+            if (location + 1) < len(c):
+                step +=1
+                location += 1
+            else:
+                endOfArray = True
+
+    print(step)
 
 
 
@@ -53,5 +73,8 @@ def countingValleys(steps, path):
 
 #valley count code
 #countingValleys(8,'UDDDUDUU')
+
+#clouds
+jumpingOnClouds([0,0,0,1,0,0])
 
 
